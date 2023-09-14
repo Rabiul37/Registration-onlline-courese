@@ -10,7 +10,7 @@
   {
     "id": 2,
     "img": "https://i.ibb.co/NpFmyzN/Rectangle-2-3.png",
-    "title": "Introduction to Algorithms",
+    "title": "Introduction to Algorithms feature",
     "price": 2500,
     "credit": 2,
     "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
@@ -18,7 +18,7 @@
   {
     "id": 3,
     "img": "https://i.ibb.co/cFFrpzJ/Rectangle-2-4.png",
-    "title": "Introduction to C++ for DSA",
+    "title": "Introduction to C++ for DSA feature",
     "price": 10000,
     "credit": 10,
     "details": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
