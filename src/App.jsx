@@ -16,6 +16,7 @@ function App() {
       return alert("You added this item please try another one");
     } else {
       setCourseName([...courseName, name.title]);
+      setTotalPrice(TotalPrice + name.price);
     }
   };
   useEffect(() => {
