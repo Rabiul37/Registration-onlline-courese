@@ -20,6 +20,8 @@ function App() {
         return alert("this not allowed");
       }
       setTotalHour(newHour);
+      const remainHour = 20 - newHour;
+      setRemainHour(remainHour);
       setCourseName([...courseName, name.title]);
       setTotalPrice(TotalPrice + name.price);
     }
