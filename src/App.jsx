@@ -1,5 +1,7 @@
 import { FaBookReader } from "react-icons/fa";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 function App() {
@@ -17,7 +19,9 @@ function App() {
     } else {
       const newHour = TotalHour + name.credit;
       if (newHour > 20) {
-        return alert("this not allowed");
+        return toast(
+          "You Total credit Hour fulfill and Your Remaining Time is over . You can't Selec more Course"
+        );
       }
       setTotalHour(newHour);
       const remainHour = 20 - newHour;
@@ -26,6 +30,7 @@ function App() {
       setTotalPrice(TotalPrice + name.price);
     }
   };
+
   useEffect(() => {
     fetch("data.json")
       .then((res) => res.json())
@@ -68,6 +73,7 @@ function App() {
               >
                 Select
               </button>
+              <ToastContainer />
             </div>
           ))}
         </div>
