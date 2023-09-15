@@ -15,7 +15,7 @@ function App() {
     const isExist = courseName.find((item) => item == name.title);
     // let count = name.credit;
     if (isExist) {
-      return toast("You already selected this item . please try another one");
+      return toast("You already selected this course . please try another one");
     } else {
       const newHour = TotalHour + name.credit;
       if (newHour > 20) {
