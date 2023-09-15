@@ -7,26 +7,15 @@ function App() {
   const [courseName, setCourseName] = useState([]);
   const [TotalPrice, setTotalPrice] = useState(0);
   const [TotalHour, setTotalHour] = useState(0);
+  const [remainingHour, setRemainHour] = useState(20);
 
   const handleCourseName = (name) => {
-    const isExist = courseName.find((item) => item.id == name.id);
-
+    const isExist = courseName.find((item) => item == name.title);
+    // let count = name.credit;
     if (isExist) {
-      return alert("You added this item please another one");
+      return alert("You added this item please try another one");
     } else {
-      setCourseName([...courseName, name]);
-    }
-  };
-
-  const handleTotalPrice = (price) => {
-    const newTotalPrice = TotalPrice + price;
-    setTotalPrice(newTotalPrice);
-  };
-  const handleTotalHour = (hour) => {
-    if (TotalHour > 4) {
-      return alert("this is over time");
-    } else {
-      setTotalHour(TotalHour + hour);
+      setCourseName([...courseName, name.title]);
     }
   };
   useEffect(() => {
@@ -43,7 +32,7 @@ function App() {
       {/* this is full container start */}
       <div className="w-11/12 m-auto mt-8 flex gap-8">
         {/* this is card section start */}
-        <div className="grid grid-cols-3 gap-3 w-3/4 bg-gray-200">
+        <div className="grid  gap-3 w-3/4 bg-gray-200 lg:grid-cols-3">
           {cards.map((card) => (
             <div className="border-2 border-gray-300 p-2" key={card.id}>
               <img src={card.img} alt="" />
@@ -66,11 +55,7 @@ function App() {
                 </h2>
               </div>
               <button
-                onClick={() => {
-                  handleTotalPrice(card.price);
-                  handleTotalHour(card.credit);
-                  handleCourseName(card.title);
-                }}
+                onClick={() => handleCourseName(card)}
                 className="bg-blue-500 w-full rounded-xl p-2 text-xl font-bold text-white"
               >
                 Select
@@ -84,7 +69,7 @@ function App() {
         <div className="w-1/4 text-center">
           <div>
             <h1 className="text-xl font-semibold text-blue-600">
-              Credit Hour Remaining 7 hr
+              Credit Hour Remaining {remainingHour} hr
             </h1>
           </div>
           <hr />
@@ -103,7 +88,7 @@ function App() {
           <hr />
           <div>
             <h1 className="text-xl font-semibold text-green-800">
-              Total Credit Hour : {TotalHour}
+              Total Credit : {TotalHour} Hour
             </h1>
           </div>
           <hr />
