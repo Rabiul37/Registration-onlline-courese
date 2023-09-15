@@ -15,12 +15,12 @@ function App() {
     const isExist = courseName.find((item) => item == name.title);
     // let count = name.credit;
     if (isExist) {
-      return toast("You added this item please try another one");
+      return toast("You already selected this item . please try another one");
     } else {
       const newHour = TotalHour + name.credit;
       if (newHour > 20) {
         return toast(
-          "You Total credit Hour fulfill and Your Remaining Time is over . You can't Selec more Course"
+          "You have no enough remaining hour. you can't select this course"
         );
       }
       setTotalHour(newHour);
