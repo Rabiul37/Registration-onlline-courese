@@ -15,6 +15,11 @@ function App() {
     if (isExist) {
       return alert("You added this item please try another one");
     } else {
+      const newHour = TotalHour + name.credit;
+      if (newHour > 20) {
+        return alert("this not allowed");
+      }
+      setTotalHour(newHour);
       setCourseName([...courseName, name.title]);
       setTotalPrice(TotalPrice + name.price);
     }
